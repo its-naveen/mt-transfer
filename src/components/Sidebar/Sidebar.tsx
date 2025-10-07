@@ -1,6 +1,7 @@
 import { SidebarContainer, SidebarMenu } from "./SidebarStyles";
 import IconClickable from "../IconClickable/IconClickable";
 import { useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 
 const initialState = {
   activeMenu: "Dashboard",
@@ -17,8 +18,11 @@ function reducer(state: typeof initialState, action: { type: string, payload?: a
 
 export default function Sidebar() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const router = useNavigate();
 
   const handleMenuClick = (menu: string) => {
+    console.log('Route', `/${menu.toLocaleLowerCase()}`);
+    router(`/${menu.toLocaleLowerCase()}`)
     dispatch({ type: "SET_ACTIVE_MENU", payload: menu });
   };
 
