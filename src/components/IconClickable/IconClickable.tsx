@@ -1,23 +1,34 @@
-import { useState } from "react";
-import { IconClickableContainer, Icon, IconLabel } from "./IconClickableStyles";
+import type { JSX } from "react";
+import { IconClickableContainer, IconLabel } from "./IconClickableStyles";
+import { DashboardIcon } from "../Icons/DashboardIcon";
+import { BeneficiaryIcon } from "../Icons/BeneficiaryIcon";
+import { BillpayIcon } from "../Icons/BillpayIcon";
+import { ProfileIcon } from "../Icons/ProfileIcon";
+import { BellIcon } from "../Icons/BellIcon";
+import { FxIcon } from "../Icons/FxIcon";
 
-interface IconClickableProps {
-  src?: string;
-  alt?: string;
-  label?: string;
-}
+type IconClickableProps = {
+  label: string;
+  active?: boolean;
+  hideLabel?: boolean;
+};
 
-export default function IconClickable({ src = '', alt = '', label = '' }: IconClickableProps) {
-  const [selected, setSelected] = useState('');
+export default function IconClickable({ label, active = false, hideLabel = false }: IconClickableProps) {
+  const iconColor = active ? "royalblue" : "#393E46";
 
-  const handleSelect = (label: string) => {
-    setSelected(label);
+  const icons: Record<string, JSX.Element> = {
+    Dashboard: <DashboardIcon color={iconColor} />,
+    Beneficiary: <BeneficiaryIcon color={iconColor} />,
+    Billpay: <BillpayIcon color={iconColor} />,
+    Profile: <ProfileIcon color={iconColor} />,
+    Notifications: <BellIcon color={iconColor} />,
+    FX: <FxIcon color={iconColor} />,
   };
 
   return (
-    <IconClickableContainer onClick={() => handleSelect(label)} isSelected={label === selected}>
-      <Icon src={src} alt={alt} />
-      <IconLabel isSelected={label === selected}>{label}</IconLabel>
+    <IconClickableContainer>
+      {icons[label]}
+      {!hideLabel && <IconLabel $active={active}>{label}</IconLabel>}
     </IconClickableContainer>
   );
 }
