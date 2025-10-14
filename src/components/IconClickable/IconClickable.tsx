@@ -6,6 +6,14 @@ import { BillpayIcon } from "../Icons/BillpayIcon";
 import { ProfileIcon } from "../Icons/ProfileIcon";
 import { BellIcon } from "../Icons/BellIcon";
 import { FxIcon } from "../Icons/FxIcon";
+import { RepeatIcon } from "../Icons/RepeatIcon";
+import { StarIcon } from "../Icons/StarIcon";
+import { ThreeDotsIcon } from "../Icons/ThreeDotsIcon";
+import { EditIcon } from "../Icons/EditIcon";
+import { ViewIcon } from "../Icons/ViewIcon";
+import { BankIcon } from "../Icons/BankIcon";
+import { VisaIcon } from "../Icons/VisaIcon";
+import { TxnHistoryIcon } from "../Icons/TxnHistoryIcon";
 
 type IconClickableProps = {
   label: string;
@@ -23,6 +31,14 @@ export default function IconClickable({ label, active = false, hideLabel = false
     Profile: <ProfileIcon color={iconColor} />,
     Notifications: <BellIcon color={iconColor} />,
     FX: <FxIcon color={iconColor} />,
+    Repeat: <RepeatIcon color={iconColor} />,
+    Star: <StarIcon color={iconColor} />,
+    ThreeDots: <ThreeDotsIcon color={iconColor} />,
+    Edit: <EditIcon color={iconColor} />,
+    View: <ViewIcon color={iconColor} />,
+    Bank: <BankIcon color={iconColor} />,
+    Visa: <VisaIcon color={iconColor} />,
+    TxnHistory: <TxnHistoryIcon color={iconColor} />,
   };
 
   return (

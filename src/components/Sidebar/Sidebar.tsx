@@ -40,6 +40,9 @@ export default function Sidebar() {
       <SidebarMenu onClick={() => handleMenuClick("Billpay")}>
         <IconClickable label="Billpay" active={state.activeMenu === "Billpay"} />
       </SidebarMenu>
+      <SidebarMenu onClick={() => handleMenuClick("TxnHistory")}>
+        <IconClickable label="TxnHistory" active={state.activeMenu === "TxnHistory"} />
+      </SidebarMenu>
     </SidebarContainer>
   );
 }

@@ -5,6 +5,5 @@ export const AppContainer = styled.main`
 `;
 
 export const MainContext = styled.div`
-  text-align: center;
   width: calc(100vw - 80px);
 `;

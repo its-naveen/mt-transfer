@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-  min-height: 8vh;
+  height: 8vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  padding: 1.6em;
   background-color: #fff;
 `;
 
