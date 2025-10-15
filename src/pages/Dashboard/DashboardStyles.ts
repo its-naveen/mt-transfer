@@ -29,7 +29,9 @@ export const ServiceCard = styled.div`
 `;
 
 export const BeneficiaryWrapper = styled.div`
-  display: flex;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.6em;
 `;
 
@@ -37,7 +39,7 @@ export const BeneficiaryList = styled.div`
   padding: 1.6em;
   margin-top: 1.6em;
   background-color: #fff;
-  width: 33%;
+  // width: 33%;
   border-radius: 8px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 
